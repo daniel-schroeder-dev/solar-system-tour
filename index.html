@@ -6,20 +6,29 @@
     <script type="text/javascript" src="trigger-planet-landing.js"></script>
   </head>
   <body>
+
     <a-scene>
       <a-assets>
         <img id="space" src="space.jpg">
+        <a-asset-item id="spaceship" src="models/spaceship.gltf"></a-asset-item>
       </a-assets>
       <a-sky src="#space"></a-sky>
 
+      
+      <!-- 
+        trigger-planet-landing put this back in the camera when you're done figuring
+        out the spaceship stuff
+      -->
       <a-camera
         wasd-controls="acceleration: 10;"
         trigger-next-animation
-        trigger-planet-landing
+
+        rotation="-7.792226013779197 4.1252961249419275 0"
+        
         animation__go-to-neptune="
           property: position;
-          from: 0 0 0;
-          to: 0 -2 -50;
+          from: -5.63324 -11.77922 8.36169;
+          to: -5.63324 -11.77922 -46.63831;
           dur: 4000;
           easing: easeInOutQuad;
           loop: false;
@@ -27,14 +36,31 @@
         geometry="primitive: box"
         aabb-collider="objects: .planet"
       >
+   
       </a-camera>
+
+      <a-gltf-model 
+
+        animation__go-to-neptune="
+          property: position;
+          from: 1 -21.41349 0;
+          to: 1 -21.41349 -55;
+          dur: 4000;
+          easing: easeInOutQuad;
+          loop: false;
+        "
+        src="#spaceship"
+        rotation="0 -90 0"
+        scale="8 8 8"
+      >
+      </a-gltf-model>
 
       <a-sphere 
         id="neptune"
         class="planet"
         color="#30baff"
-        radius="5"
-        position="0 -2 -60"
+        radius="175"
+        position="0 -2 -300"
       >
       </a-sphere>
 
@@ -54,7 +80,7 @@
         color="#fff" 
         height="2.75" 
         width="6.05"
-        position="4 -0.5 -55"
+        position="-1 -10.5 -52"
         opacity="0"
       >
 
