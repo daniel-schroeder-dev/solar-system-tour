@@ -1,8 +1,7 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
-    <script type="text/javascript" src="trigger-next-animation.js"></script>
+    <script type="text/javascript" src="trigger-popup-animation.js"></script>
     <script type="text/javascript" src="trigger-planet-landing.js"></script>
   </head>
   <body>
@@ -14,17 +13,10 @@
       </a-assets>
       <a-sky src="#space"></a-sky>
 
-      
-      <!-- 
-        trigger-planet-landing put this back in the camera when you're done figuring
-        out the spaceship stuff
-      -->
       <a-camera
         wasd-controls="acceleration: 10;"
-        trigger-next-animation
-
         rotation="-7.792226013779197 4.1252961249419275 0"
-        
+        trigger-planet-landing
         animation__go-to-neptune="
           property: position;
           from: -5.63324 -11.77922 8.36169;
@@ -33,6 +25,16 @@
           easing: easeInOutQuad;
           loop: false;
         "
+        animation__land-on-neptune="
+          property: position;
+          from: -5.63324 -11.77922 -46.63831;
+          to: -5.63324 -11.77922 -56.63831;
+          dur: 4000;
+          easing: easeInOutQuad;
+          loop: false;
+          delay: 6000;
+        "
+
         geometry="primitive: box"
         aabb-collider="objects: .planet"
       >
@@ -40,7 +42,7 @@
       </a-camera>
 
       <a-gltf-model 
-
+        trigger-popup-animation
         animation__go-to-neptune="
           property: position;
           from: 1 -21.41349 0;
@@ -48,6 +50,16 @@
           dur: 4000;
           easing: easeInOutQuad;
           loop: false;
+        "
+
+        animation__land-on-neptune="
+          property: position;
+          from: 1 -21.41349 -55;
+          to: 1 -21.41349 -65;
+          dur: 4000;
+          easing: easeInOutQuad;
+          loop: false;
+          delay: 6000;
         "
         src="#spaceship"
         rotation="0 -90 0"

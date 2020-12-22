@@ -1,4 +1,4 @@
-AFRAME.registerComponent('trigger-next-animation', {
+AFRAME.registerComponent('trigger-popup-animation', {
   schema: {},
   init: function() {
   	this.el.addEventListener('animationcomplete', e => {
