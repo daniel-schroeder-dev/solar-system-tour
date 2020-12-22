@@ -4,7 +4,19 @@
   </head>
   <body>
     <a-scene>
-      
+      <a-assets>
+        <img id="space" src="space.jpg">
+      </a-assets>
+      <a-sky src="#space"></a-sky>
+
+      <a-sphere 
+        id="neptune"
+        class="planet"
+        color="#36ffc9"
+        radius="5"
+        position="0 -2 -60"
+      >
+      </a-sphere>
     </a-scene>
   </body>
 </html>
