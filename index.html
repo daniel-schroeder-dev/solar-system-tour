@@ -17,6 +17,7 @@
           from: 0 0 0;
           to: 0 -2 -50;
           dur: 2000;
+          easing: easeInOutQuad;
           loop: false;
         "
       >
@@ -32,20 +33,37 @@
       </a-sphere>
 
       <a-plane 
+        animation__make-visible="
+          property: material.opacity;
+          from: 0;
+          to: 1;
+          dur: 1000;
+          easing: linear;
+          startEvents: trigger-popup;
+        "
         id="neptune-popup"
         class="popup"
         color="#333" 
         height="2.5" 
         width="5.5"
         position="4 -0.5 -55"
-        visible="false"
+        opacity="0"
       >
         <a-text 
+          animation__make-visible="
+            property: opacity;
+            from: 0;
+            to: 1;
+            dur: 1000;
+            easing: linear;
+            startEvents: trigger-popup;
+          "
           id="neptune-popup-text"
           class="popup-text"
           color="#60ff1c"
           value="Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, slightly more massive than its near-twin Uranus."
           position="-2.3 0 0"
+          opacity="0"
         >
         </a-text>
       </a-plane>

@@ -2,7 +2,7 @@ AFRAME.registerComponent('trigger-next-animation', {
   schema: {},
   init: function() {
   	this.el.addEventListener('animationcomplete', e => {
-  		document.querySelector('#neptune-popup').setAttribute('visible', true);
+  		document.querySelector('#neptune-popup-text').emit('trigger-popup', null, true);
   	});
   },
   update: function () {},
