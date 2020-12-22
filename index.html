@@ -33,12 +33,14 @@
       </a-sphere>
 
        <a-plane 
-        animation__make-visible="
+        animation__fade-in-out="
           property: material.opacity;
           from: 0;
           to: 1;
           dur: 1000;
+          dir: alternate;
           easing: linear;
+          loop: true;
           startEvents: trigger-popup;
         "
         id="neptune-popup-wrapper"
